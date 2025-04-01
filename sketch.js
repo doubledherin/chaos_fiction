@@ -1,11 +1,6 @@
-let m, n, done, sand
-let numberOfGrains = 10000
-let maxNumberOfGrains = 15000
-
-let font
-let textPoints
-const chaos = "chaos fiction"
-const fontSize = 100
+let boundingBox, font, m, n, done, sand, logo
+let numberOfSandGrains = 10000
+let sandColor = "#f6d7b0"
 
 function preload() {
   font = loadFont("fonts/ALVEDON2.ttf")
@@ -13,28 +8,18 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
-  stroke("#f6d7b0") // sand color
-
-  let bbox = font.textBounds(chaos, 0, 0, fontSize)
-  textPoints = font
-    .textToPoints(
-      chaos,
-      width / 2 - bbox.w / 2,
-      height / 2 + bbox.h / 2,
-      fontSize,
-      {
-        sampleFactor: 0.5,
-      }
-    )
-    .map((p) => ({ x: p.x, y: p.y }))
+  stroke(sandColor)
   newVibration()
   cursor(HAND)
+  textFont(font)
+
+  logo = new LogoTextPoints(font)
 }
 
 function newVibration() {
   setNodeCounts()
   done = false
-  sand = Array.from({ length: numberOfGrains }, () => new SandGrain())
+  sand = Array.from({ length: numberOfSandGrains }, () => new SandGrain())
 }
 
 // m and n are used in the chladni function.
@@ -99,26 +84,20 @@ function mouseIsMoving() {
 }
 
 function mouseMoved() {
-  if (sand.length < maxNumberOfGrains) {
-    addSand()
-  }
+  addSand()
 }
 
 function draw() {
-  for (let i = 0; i < textPoints.length; i++) {
-    fill(255)
-    ellipse(textPoints[i].x, textPoints[i].y, 1, 1)
-  }
+  background(0)
+  logo.update()
+  logo.display()
+
   if (mouseIsMoving()) {
     swipeSand()
   }
-  if (!done) {
-    background(0)
-
-    for (let grain of sand) {
-      grain.update()
-      grain.show()
-    }
-    done = sand.every((p) => p.isHome)
+  for (let grain of sand) {
+    grain.update()
+    grain.show()
   }
+  done = sand.every((p) => p.isHome)
 }
