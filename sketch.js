@@ -89,7 +89,7 @@ function mouseMoved() {
 
 function draw() {
   background(0)
-  logo.update()
+  // logo.update()
   logo.display()
 
   if (mouseIsMoving()) {
