@@ -20,12 +20,12 @@ function windowResized() {
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight)
   angleMode(DEGREES)
-  canvas.position(width / 2, 300)
+  // canvas.position(width / 2, 300)
   canvas.style("z-index", "-1")
 }
 
 function draw() {
-  background(255)
+  background(0)
   let x = r * cos(angle)
   let y = r * sin(angle)
 
