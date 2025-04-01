@@ -1,10 +1,10 @@
 class LogoTextPoints {
-  constructor(font) {
+  constructor(font, textSize) {
     this.font
     this.text = "chaos fiction"
-    this.txtSize = 70
-    this.width = font.textBounds(this.text, 0, 0, this.txtSize).w
-    this.height = font.textBounds(this.text, 0, 0, this.txtSize).h
+    this.textSize = textSize
+    this.width = font.textBounds(this.text, 0, 0, this.textSize).w
+    this.height = font.textBounds(this.text, 0, 0, this.textSize).h
     this.radius = 8
     this.radians = 0
     this.x = this.radius * cos(this.radians) + this.radius * sin(this.radians)
@@ -20,7 +20,7 @@ class LogoTextPoints {
       this.text,
       width / 2 - this.width / 2,
       height / 2 + this.height / 2,
-      this.txtSize,
+      this.textSize,
       { sampleFactor: 1 }
     )
   }
@@ -29,10 +29,6 @@ class LogoTextPoints {
     let x = this.radius * cos(this.radians)
     let y = this.radius * sin(this.radians)
 
-    // yellow points
-    // translate(20, 300)
-
-    textSize(this.txtSize)
     push()
     translate(width / 2 - this.width / 2, height / 2 + this.height / 2)
     fill(this.yellow)
@@ -57,7 +53,7 @@ class LogoTextPoints {
     )
     noStroke()
     pop()
-    this.radians += 0.05
+    this.radians += 0.045
   }
 
   // update() {

@@ -1,6 +1,7 @@
 let boundingBox, font, m, n, done, sand, logo
 let numberOfSandGrains = 10000
 let sandColor = "#f6d7b0"
+let fontSize = 70
 
 function preload() {
   font = loadFont("fonts/ALVEDON2.ttf")
@@ -12,8 +13,9 @@ function setup() {
   newVibration()
   cursor(HAND)
   textFont(font)
+  textSize(fontSize)
 
-  logo = new LogoTextPoints(font)
+  logo = new LogoTextPoints(font, fontSize)
 }
 
 function newVibration() {
