@@ -8,7 +8,12 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight)
+  const canvasMargin = 100
+  const canvas = createCanvas(
+    windowWidth - canvasMargin * 2,
+    windowHeight - canvasMargin * 2
+  )
+  canvas.position(canvasMargin, canvasMargin)
   logo = new LogoTextPoints(font, fontSize)
   newVibration()
   cursor(HAND)
