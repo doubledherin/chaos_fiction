@@ -7,5 +7,5 @@ body {
 canvas {
   display: block;
   border: 0.5rem double #f6d7b0;
-  border-radius: 15px;
+  border-radius: 10px;
 }
