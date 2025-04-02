@@ -9,19 +9,18 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
-  stroke(sandColor)
+  logo = new LogoTextPoints(font, fontSize)
   newVibration()
   cursor(HAND)
   textFont(font)
   textSize(fontSize)
-
-  logo = new LogoTextPoints(font, fontSize)
+  loadPixels()
 }
 
 function newVibration() {
   setNodeCounts()
   done = false
-  sand = Array.from({ length: numberOfSandGrains }, () => new SandGrain())
+  sand = Array.from({ length: numberOfSandGrains }, () => new SandGrain(logo))
 }
 
 // m and n are used in the chladni function.
@@ -40,9 +39,9 @@ function setNodeCounts() {
   }
 }
 
-function addSand() {
+function addSand(logo) {
   for (let i = 0; i < 100; i++) {
-    sand.push(new SandGrain())
+    sand.push(new SandGrain(logo))
   }
 }
 
@@ -86,13 +85,11 @@ function mouseIsMoving() {
 }
 
 function mouseMoved() {
-  addSand()
+  addSand(logo)
 }
 
 function draw() {
   background(0)
-  // logo.update()
-  logo.display()
 
   if (mouseIsMoving()) {
     swipeSand()
@@ -101,5 +98,8 @@ function draw() {
     grain.update()
     grain.show()
   }
+  // logo.update()
+  logo.display()
+
   done = sand.every((p) => p.isHome)
 }

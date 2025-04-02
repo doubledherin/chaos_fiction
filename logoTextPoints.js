@@ -9,11 +9,14 @@ class LogoTextPoints {
     this.radians = 0
     this.x = this.radius * cos(this.radians) + this.radius * sin(this.radians)
     this.y = this.radius * sin(this.radians) + this.radius * cos(this.radians)
-    this.greenOutline = "#3D6A55"
-    this.blue = "#56B7B0"
-    this.red = "#CC3261"
-    this.yellow = "#F1BC47"
-    this.green = "#3D6A55"
+    this.greenOutline = color(61, 106, 85) //"#3D6A55"
+    this.blue = color(86, 183, 176) // "#56B7B0"
+    this.red = color(204, 50, 97) // "#CC3261"
+    this.yellow = color(241, 188, 71)
+    this.green = color(61, 106, 85) //"#3D6A55"
+    this.rightForce = createVector(10, 0)
+    this.leftForce = createVector(-10, 0)
+    this.horizontalDirection = ""
 
     // 'chaos fiction' text should be horizontally and vertically centered'
     this.points = font.textToPoints(
@@ -31,18 +34,43 @@ class LogoTextPoints {
 
     push()
     translate(width / 2 - this.width / 2, height / 2 + this.height / 2)
+
+    // yellow logo
     fill(this.yellow)
     text(
       this.text,
       x + this.radius * sin(this.radians),
       y + this.radius * cos(this.radians)
     )
+    if (sin(this.radians) < 0) {
+      this.horizontalDirection = "left"
+      // print(this.horizontalDirection)
+    } else {
+      this.horizontalDirection = "right"
+      // print(this.horizontalDirection)
+    }
+    // print("sin(this.radians)", sin(this.radians))
+    // if (sin(this.radians) < 0) {
+    //   print("right")
+    // } else {
+    //   print("left")
+    // }
+
+    // if (cos(this.radians) < 0) {
+    //   print("up")
+    // } else {
+    //   print("down")
+    // }
+
+    // red logo
     fill(this.red)
     text(
       this.text,
       x + 8 - this.radius * sin(this.radians),
       y + 8 + this.radius * cos(this.radians)
     )
+
+    // blue logo
     fill(this.blue)
     stroke(this.green)
     strokeWeight(4)
@@ -51,9 +79,9 @@ class LogoTextPoints {
       x + 16 + this.radius * sin(this.radians),
       y + 15 + this.radius * cos(this.radians)
     )
-    noStroke()
+
     pop()
-    this.radians += 0.045
+    this.radians += 0.08
   }
 
   // update() {

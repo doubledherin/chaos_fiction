@@ -1,5 +1,5 @@
 class SandGrain {
-  constructor(textPoints) {
+  constructor(logo) {
     this.currentPosition = createVector(random(0, width), random(0, height))
     this.velocity = p5.Vector.random2D()
     this.acceleration = createVector()
@@ -7,8 +7,12 @@ class SandGrain {
     this.maxSteeringVelocity = 1
     this.isHome = false
     this.threshold = 0.05
-    this.textPoints = textPoints
+    // this.textPoints = textPoints
+    this.sandColor = color(246, 215, 176)
+    this.logo = logo
   }
+
+  isTouchingLogo() {}
 
   checkEdges() {
     if (this.currentPosition.x > width) {
@@ -21,6 +25,11 @@ class SandGrain {
     } else if (this.currentPosition.y < 0) {
       this.currentPosition.y = height
     }
+  }
+
+  applyForce(force) {
+    // go left
+    this.acceleration.add(force)
   }
 
   getSteeringVelocity() {
@@ -52,13 +61,15 @@ class SandGrain {
   }
 
   update() {
+    this.isTouchingLogo()
     const steeringVelocity = this.getSteeringVelocity()
 
     // If the magnitude of the steering velocity is zero,
     // then the grain of sand has reached its target,
     // and is therefore 'home'
     this.isHome = steeringVelocity.mag() === 0
-
+    // const left = createVector(-10, 0)
+    // this.applyForce(left)
     if (!this.isHome) {
       this.checkEdges()
       this.acceleration.add(steeringVelocity)
@@ -70,6 +81,7 @@ class SandGrain {
   }
 
   show() {
+    stroke(this.sandColor)
     ellipse(this.currentPosition.x, this.currentPosition.y, 1, 1)
   }
 }
