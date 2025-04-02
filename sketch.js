@@ -1,6 +1,5 @@
 let boundingBox, font, m, n, done, sand, logo
 let numberOfSandGrains = 10000
-let sandColor = "#f6d7b0"
 let fontSize = 100
 
 function preload() {

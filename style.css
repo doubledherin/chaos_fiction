@@ -6,6 +6,6 @@ body {
 }
 canvas {
   display: block;
-  border: 0.5rem double #f6d7b0;
+  border: 0.5rem double rgb(252, 228, 174);
   border-radius: 10px;
 }

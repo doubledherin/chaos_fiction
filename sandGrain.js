@@ -8,7 +8,7 @@ class SandGrain {
     this.isHome = false
     this.threshold = 0.05
     // this.textPoints = textPoints
-    this.sandColor = color(246, 215, 176)
+    this.sandColor = color(252, 228, 174) // color(246, 215, 176)
     this.logo = logo
   }
 
