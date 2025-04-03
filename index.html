@@ -127,7 +127,18 @@
         >.
       </div>
     </section>
-    <section id="mailing-list"><div>Mailing List Section</div></section>
+    <section id="mailing-list">
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/chaosfiction"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/chaosfiction', 'popupwindow')"
+        class="embeddable-buttondown-form">
+        <label for="bd-email">Enter your email</label><br />
+        <input type="email" name="email" id="bd-email" />
+        <input type="submit" value="Subscribe" />
+      </form>
+    </section>
 
     <script src="javascript/toggleMenu.js"></script>
     <script src="javascript/sandGrain.js"></script>

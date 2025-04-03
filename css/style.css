@@ -199,6 +199,35 @@ section {
 #contact a {
   color: white;
 }
+
+#mailing-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+#mailing-list form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#mailing-list input[type="email"] {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 20px;
+}
+
+#mailing-list input[type="submit"] {
+  width: 50%;
+  height: 2rem;
+  color: rgb(252, 229, 174);
+  font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  background-color: black;
+  border: 1px rgb(252, 229, 174) solid !important;
+  border-radius: 16px;
+}
+
 /* steady nerves release info */
 /* //////////////////////////////////////////////// */
 .release-info {
