@@ -3,6 +3,11 @@
   src: url("../fonts/ALVEDON2.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Orbitron-Bold";
+  src: url("../fonts/Orbitron-Bold.ttf") format("truetype");
+}
+
 html,
 body {
   margin: 0;
@@ -10,13 +15,15 @@ body {
   background-color: black;
   color: rgb(252, 229, 174);
   overflow-y: scroll;
-  font-family: "Alvedon2", Arial, Helvetica, sans-serif;
+  font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
   letter-spacing: 0.2rem;
 }
 canvas {
   display: block;
 }
 
+/* navigation */
+/* //////////////////////////////////////////////// */
 nav,
 .nav-links {
   display: flex;
@@ -133,4 +140,12 @@ a:hover {
 
 .hamburger-icon span:last-child {
   transform: none;
+}
+
+/* steady nerves release info */
+/* //////////////////////////////////////////////// */
+#release-info {
+  text-align: center;
+  color: white;
+  margin: 40px;
 }
