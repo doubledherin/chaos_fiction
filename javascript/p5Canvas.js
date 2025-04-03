@@ -9,7 +9,7 @@ function preload() {
 function setup() {
   const canvasMargin = 100
   const canvas = createCanvas(windowWidth, windowHeight - canvasMargin * 2)
-  canvas.position(0, canvasMargin)
+  canvas.parent("p5-canvas")
   sandColor = color(252, 229, 174)
   logo = new LogoTextPoints(font, fontSize, sandColor)
   newVibration()

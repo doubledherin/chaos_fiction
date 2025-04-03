@@ -3,14 +3,54 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
-    <script src="libraries/kdTree-min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/mediaQueries.css" />
     <meta charset="utf-8" />
   </head>
   <body>
-    <main></main>
-    <script src="logoTextPoints.js"></script>
-    <script src="sandGrain.js"></script>
-    <script src="sketch.js"></script>
+    <nav id="desktop-nav">
+      <div class="logo">Chaos Fiction</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#shows">Shows</a></li>
+          <li><a href="#listen">Listen</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#mailing-list">Mailing List</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Wendy Dherin</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#shows" onclick="toggleMenu()">Shows</a></li>
+          <li>
+            <a href="#listen" onclick="toggleMenu()">>Listen</a>
+          </li>
+          <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <a href="#mailing-list" onclick="toggleMenu()">Mailing List</a>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <div id="p5-canvas"></div>
+    <section id="shows"><div>Shows Section</div></section>
+    <section id="listen"><div>Listen Section</div></section>
+    <section id="gallery"><div>Gallery Section</div></section>
+    <section id="contact"><div>Contact Section</div></section>
+    <section id="mailing-list"><div>Mailing List Section</div></section>
+
+    <script src="javascript/toggleMenu.js"></script>
+    <script src="javascript/logoTextPoints.js"></script>
+    <script src="javascript/sandGrain.js"></script>
+    <script src="javascript/p5Canvas.js"></script>
   </body>
 </html>
