@@ -10,8 +10,8 @@ function preload() {
 }
 
 function setup() {
-  const canvasMargin = 100
-  const canvas = createCanvas(windowWidth, windowHeight - canvasMargin * 2)
+  // const canvasMargin = 100
+  const canvas = createCanvas(windowWidth, windowHeight)
   canvas.parent("p5-canvas")
 
   // setReleaseCopy(canvas)

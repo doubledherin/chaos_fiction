@@ -14,7 +14,6 @@ body {
   padding: 0;
   background-color: black;
   color: rgb(252, 229, 174);
-  overflow-y: scroll;
   font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
   letter-spacing: 0.2rem;
 }
@@ -30,6 +29,10 @@ nav,
 }
 
 nav {
+  background-color: black;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
   margin: 0 2rem;
   justify-content: space-between;
   align-items: center;
@@ -39,7 +42,15 @@ nav {
 .nav-links {
   gap: 2rem;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.nav-links img {
+  width: 25px;
+}
+
+.nav-links .mailing-list {
+  text-wrap: nowrap;
 }
 
 a {
