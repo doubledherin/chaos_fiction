@@ -1,10 +1,17 @@
+@font-face {
+  font-family: "Alvedon2";
+  src: url("../fonts/ALVEDON2.ttf") format("truetype");
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   background-color: black;
-  color: white;
+  color: rgb(252, 229, 174);
   overflow-y: scroll;
+  font-family: "Alvedon2", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.2rem;
 }
 canvas {
   display: block;
@@ -28,16 +35,16 @@ nav {
 }
 
 a {
-  color: white;
+  color: rgb(252, 229, 174);
   text-decoration: none;
-  text-decoration-color: white;
+  text-decoration-color: rgb(252, 229, 174);
 }
 
 a:hover {
-  color: grey;
+  color: white;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: white;
 }
 
 .logo {
@@ -69,7 +76,7 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: rgb(252, 229, 174);
   transition: all 0.3 ease-in-out;
 }
 
@@ -89,7 +96,7 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: white;
+  color: rgb(252, 229, 174);
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
