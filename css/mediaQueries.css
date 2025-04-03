@@ -1,3 +1,4 @@
+/* large */
 @media screen and (max-width: 1400px) {
   #project {
     height: 83vh;
@@ -8,6 +9,7 @@
   }
 }
 
+/* medium */
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
@@ -45,6 +47,7 @@
   }
 }
 
+/* small */
 @media screen and (max-width: 600px) {
   #contact,
   footer {
