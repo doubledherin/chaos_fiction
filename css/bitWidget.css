@@ -1,3 +1,9 @@
+/* bandsintown widgets */
+.bit-widget-container {
+  width: 100vh;
+  text-align: center;
+}
+
 .bit-widget .bit-top-track-button {
   margin-bottom: 40px;
   color: rgb(252, 229, 174);
