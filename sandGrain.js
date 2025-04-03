@@ -1,5 +1,5 @@
 class SandGrain {
-  constructor(logo) {
+  constructor(logo, sandColor) {
     this.currentPosition = createVector(random(0, width), random(0, height))
     this.velocity = p5.Vector.random2D()
     this.acceleration = createVector()
@@ -8,7 +8,7 @@ class SandGrain {
     this.isHome = false
     this.threshold = 0.05
     // this.textPoints = textPoints
-    this.sandColor = color(252, 228, 174) // color(246, 215, 176)
+    this.sandColor = sandColor
     this.logo = logo
   }
 
@@ -80,8 +80,20 @@ class SandGrain {
     }
   }
 
+  isNearLogo() {
+    return (
+      this.currentPosition.x > this.logo.outerBox.x &&
+      this.currentPosition.x <
+        this.logo.outerBox.x + this.logo.outerBox.width &&
+      this.currentPosition.y > this.logo.outerBox.y &&
+      this.currentPosition.y < this.logo.outerBox.y + this.logo.outerBox.height
+    )
+  }
+
   show() {
-    stroke(this.sandColor)
-    ellipse(this.currentPosition.x, this.currentPosition.y, 1, 1)
+    if (!this.isNearLogo()) {
+      stroke(this.sandColor)
+      ellipse(this.currentPosition.x, this.currentPosition.y, 1, 1)
+    }
   }
 }

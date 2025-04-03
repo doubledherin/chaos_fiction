@@ -1,4 +1,4 @@
-let boundingBox, font, m, n, done, sand, logo
+let boundingBox, font, m, n, done, sand, logo, sandColor
 let numberOfSandGrains = 10000
 let fontSize = 100
 
@@ -8,12 +8,10 @@ function preload() {
 
 function setup() {
   const canvasMargin = 100
-  const canvas = createCanvas(
-    windowWidth - canvasMargin * 2,
-    windowHeight - canvasMargin * 2
-  )
-  canvas.position(canvasMargin, canvasMargin)
-  logo = new LogoTextPoints(font, fontSize)
+  const canvas = createCanvas(windowWidth, windowHeight - canvasMargin * 2)
+  canvas.position(0, canvasMargin)
+  sandColor = color(252, 229, 174)
+  logo = new LogoTextPoints(font, fontSize, sandColor)
   newVibration()
   cursor(HAND)
   textFont(font)
@@ -24,7 +22,10 @@ function setup() {
 function newVibration() {
   setNodeCounts()
   done = false
-  sand = Array.from({ length: numberOfSandGrains }, () => new SandGrain(logo))
+  sand = Array.from(
+    { length: numberOfSandGrains },
+    () => new SandGrain(logo, sandColor)
+  )
 }
 
 // m and n are used in the chladni function.
@@ -45,7 +46,7 @@ function setNodeCounts() {
 
 function addSand(logo) {
   for (let i = 0; i < 100; i++) {
-    sand.push(new SandGrain(logo))
+    sand.push(new SandGrain(logo, sandColor))
   }
 }
 
