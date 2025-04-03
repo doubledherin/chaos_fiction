@@ -186,6 +186,10 @@ section {
   justify-content: space-between;
 }
 
+#gallery img {
+  width: 100%;
+}
+
 /* steady nerves release info */
 /* //////////////////////////////////////////////// */
 .release-info {
