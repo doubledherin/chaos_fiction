@@ -59,6 +59,11 @@ a:hover {
   font-size: 2rem;
 }
 
+.logo img {
+  padding-top: 10px;
+  width: 390px;
+}
+
 .logo:hover {
   cursor: default;
 }
@@ -94,7 +99,7 @@ a:hover {
   top: 100%;
   right: 0;
   background-color: black;
-  width: fit-content;
+  width: max-content;
   max-height: 0;
   overflow: hidden;
   transition: all 0.3 ease-in-out;
