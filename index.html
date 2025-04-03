@@ -2,13 +2,17 @@
 <html lang="en">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bitWidget.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" href="css/mediaQueries.css" />
+
     <meta charset="utf-8" />
   </head>
   <body>
     <nav id="desktop-nav">
-      <div class="logo"><img src="assets/logo.svg" /></div>
+      <a href="/"
+        ><div class="logo"><img src="assets/logo.svg" /></div
+      ></a>
       <div>
         <ul class="nav-links">
           <li><a href="#shows">Shows</a></li>
@@ -46,7 +50,9 @@
       </div>
     </nav>
     <nav id="hamburger-nav">
-      <div class="logo"><img src="assets/logo.svg" /></div>
+      <a href="/"
+        ><div class="logo"><img src="assets/logo.svg" /></div
+      ></a>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -66,10 +72,27 @@
         </div>
       </div>
     </nav>
-    <div id="p5-canvas"></div>
+    <div id="home"><div id="p5-canvas"></div></div>
+
     <section id="shows">
-      <div>Shows Section</div>
-      <div>HI</div>
+      <script
+        charset="utf-8"
+        src="https://widget.bandsintown.com/main.min.js"></script>
+      <a
+        class="bit-widget-initializer"
+        data-artist-name="Chaos Fiction"
+        data-display-local-dates="false"
+        data-display-past-dates="false"
+        data-auto-style="false"
+        data-text-color="#FFFFFF"
+        data-link-color="#7a7aff"
+        data-background-color="rgba(0,0,0,0)"
+        data-display-limit=""
+        data-display-start-time="false"
+        data-link-text-color="#FFFFFF"
+        data-display-lineup="false"
+        data-display-play-my-city="false"
+        data-separator-color="rgba(124,124,124,0.25)"></a>
     </section>
     <section id="listen"><div>Listen Section</div></section>
     <section id="gallery"><div>Gallery Section</div></section>
