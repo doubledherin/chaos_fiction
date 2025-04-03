@@ -190,6 +190,15 @@ section {
   width: 100%;
 }
 
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+#contact a {
+  color: white;
+}
 /* steady nerves release info */
 /* //////////////////////////////////////////////// */
 .release-info {
