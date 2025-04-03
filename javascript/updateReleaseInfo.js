@@ -1,22 +1,20 @@
-function updateReleaseInfo() {
+function updateReleaseCopy(postreleaseHtml) {
   const releaseInfo = document.getElementById("release-info")
-  const now = new Date()
-  console.log(getISODateStringFor30SecondsFromNow())
-  const releaseDate = new Date("2025-04-11T07:01:00Z") // 12:01 AM Pacific Time (UTC-7)
-  // const tenSecondsFromNow = new Date("2025-04-03T18:27:38Z")
 
-  // If the current time is past the target date, update the text
+  const releaseDate = new Date("2025-04-11T07:01:00Z") // 12:01 AM Pacific Time (UTC-7)
+  console.log(getISODateStringFor10SecondsFromNow())
+  const tenSecondsFromNow = "2025-04-03T20:34:50Z"
+  const now = new Date()
   if (now >= releaseDate) {
-    releaseInfo.innerHTML = `<div>New album Steady Nerves now streaming everywhere.</br>Vinyl coming soon!</br>Listen <a href='https://chaosfiction.hearnow.com/steady-nerves'>here</a>.</div>`
     clearInterval(checkTimeInterval) // Stop checking once the update is made
+    releaseInfo.innerHTML = postreleaseHtml
   }
 }
-// check once a second to see if the release date/time has been reached
-const checkTimeInterval = setInterval(updateReleaseInfo, 1000)
 
-function getISODateStringFor30SecondsFromNow() {
+// for testing the update to the release info
+function getISODateStringFor10SecondsFromNow() {
   const now = new Date()
-  const thirtySecondsFromNow = new Date(now.getTime() + 30000) // Add 30 seconds
+  const thirtySecondsFromNow = new Date(now.getTime() + 10000) // Add 30 seconds
 
   // Format the date to "YYYY-MM-DDTHH:mm:ssZ"
   const year = thirtySecondsFromNow.getUTCFullYear()

@@ -144,10 +144,13 @@ a:hover {
 
 /* steady nerves release info */
 /* //////////////////////////////////////////////// */
-#release-info {
+.release-info {
   text-align: center;
   color: white;
   margin: 40px;
-  font-size: x-large;
-  line-height: 2.5rem;
+  font-size: large;
+  line-height: 2rem;
+  background-color: black;
+  border: 0.5px rgb(252, 229, 174) solid;
+  border-radius: 15px;
 }
