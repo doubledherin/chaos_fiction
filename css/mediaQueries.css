@@ -1,0 +1,26 @@
+/* large */
+@media screen and (max-width: 1400px) {
+}
+
+/* medium */
+@media screen and (max-width: 1280px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+}
+
+/* small */
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

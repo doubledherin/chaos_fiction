@@ -1,18 +1,14 @@
 class SandGrain {
-  constructor(logo, sandColor) {
+  constructor(sandColor) {
     this.currentPosition = createVector(random(0, width), random(0, height))
     this.velocity = p5.Vector.random2D()
     this.acceleration = createVector()
     this.maxCurrentVelocity = 30
     this.maxSteeringVelocity = 2
-    this.isHome = false
     this.threshold = 0.05
     // this.textPoints = textPoints
     this.sandColor = sandColor
-    this.logo = logo
   }
-
-  isTouchingLogo() {}
 
   checkEdges() {
     if (this.currentPosition.x > width) {
@@ -61,39 +57,21 @@ class SandGrain {
   }
 
   update() {
-    this.isTouchingLogo()
     const steeringVelocity = this.getSteeringVelocity()
 
     // If the magnitude of the steering velocity is zero,
     // then the grain of sand has reached its target,
     // and is therefore 'home'
-    this.isHome = steeringVelocity.mag() === 0
-    // const left = createVector(-10, 0)
-    // this.applyForce(left)
-    if (!this.isHome) {
-      this.checkEdges()
-      this.acceleration.add(steeringVelocity)
-      this.velocity.add(this.acceleration)
-      this.velocity.limit(this.maxCurrentVelocity)
-      this.currentPosition.add(this.velocity)
-      this.acceleration.mult(0)
-    }
-  }
-
-  isNearLogo() {
-    return (
-      this.currentPosition.x > this.logo.outerBox.x &&
-      this.currentPosition.x <
-        this.logo.outerBox.x + this.logo.outerBox.width &&
-      this.currentPosition.y > this.logo.outerBox.y &&
-      this.currentPosition.y < this.logo.outerBox.y + this.logo.outerBox.height
-    )
+    this.checkEdges()
+    this.acceleration.add(steeringVelocity)
+    this.velocity.add(this.acceleration)
+    this.velocity.limit(this.maxCurrentVelocity)
+    this.currentPosition.add(this.velocity)
+    this.acceleration.mult(0)
   }
 
   show() {
-    if (!this.isNearLogo()) {
-      stroke(this.sandColor)
-      ellipse(this.currentPosition.x, this.currentPosition.y, 1, 1)
-    }
+    stroke(this.sandColor)
+    ellipse(this.currentPosition.x, this.currentPosition.y, 1, 1)
   }
 }

@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "Alvedon2";
+  src: url("../fonts/ALVEDON2.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Orbitron-Bold";
+  src: url("../fonts/Orbitron-Bold.ttf") format("truetype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: rgb(252, 229, 174);
+  font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.2rem;
+}
+canvas {
+  display: block;
+}
+
+/* navigation */
+/* //////////////////////////////////////////////// */
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  background-color: black;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  margin: 0 2rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.nav-links img {
+  width: 25px;
+}
+
+.nav-links .mailing-list {
+  text-wrap: nowrap;
+}
+
+a {
+  color: rgb(252, 229, 174);
+  text-decoration: none;
+  text-decoration-color: rgb(252, 229, 174);
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: white;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo img {
+  cursor: pointer;
+  padding-top: 10px;
+  width: 390px;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+#hamburger-nav {
+  display: none;
+  margin: 0 4rem;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 26px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 5px;
+  background-color: rgb(252, 229, 174);
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: black;
+  width: max-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(252, 229, 174);
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:nth-child(2) {
+  opacity: 1;
+}
+
+.hamburger-icon span:last-child {
+  transform: none;
+}
+
+/* sections */
+section {
+  padding-top: 10vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+#shows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#listen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#gallery img {
+  width: 100%;
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+#contact a {
+  color: white;
+}
+
+#mailing-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+#mailing-list form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#mailing-list input[type="email"] {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 20px;
+}
+
+#mailing-list input[type="submit"] {
+  width: 50%;
+  height: 2rem;
+  color: rgb(252, 229, 174);
+  font-family: "Orbitron-Bold", Arial, Helvetica, sans-serif;
+  background-color: black;
+  border: 1px rgb(252, 229, 174) solid !important;
+  border-radius: 16px;
+}
+
+/* steady nerves release info */
+/* //////////////////////////////////////////////// */
+.release-info {
+  text-align: center;
+  color: white;
+  margin: 40px;
+  font-size: large;
+  line-height: 2rem;
+  background-color: black;
+  border: 0.5px rgb(252, 229, 174) solid;
+  border-radius: 15px;
+}

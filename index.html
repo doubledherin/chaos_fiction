@@ -2,15 +2,147 @@
 <html lang="en">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
-    <script src="libraries/kdTree-min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bitWidget.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/mediaQueries.css" />
+
     <meta charset="utf-8" />
   </head>
   <body>
-    <main></main>
-    <script src="logoTextPoints.js"></script>
-    <script src="sandGrain.js"></script>
-    <script src="sketch.js"></script>
+    <nav id="desktop-nav">
+      <a href="/"
+        ><div class="logo"><img src="assets/logo.svg" /></div
+      ></a>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#shows">Shows</a></li>
+          <li><a href="#listen">Listen</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="mailing-list"><a href="#mailing-list">Mailing List</a></li>
+          <li>
+            <a href="https://chaosfiction.bandcamp.com/" target="_blank">
+              <img
+                src="https://chaosfictionmusic.com/s/dynamic/bandcamp.svg?color=%23fce5ae"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/chaos.fiction/" target="_blank">
+              <img
+                src="https://chaosfictionmusic.com/s/dynamic/instagram.svg?color=%23fce5ae"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@ChaosFiction" target="_blank">
+              <img
+                src="https://chaosfictionmusic.com/s/dynamic/youtube.svg?color=%23fce5ae"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/chaosfictionmusic/"
+              target="_blank">
+              <img
+                src="https://chaosfictionmusic.com/s/dynamic/facebook.svg?color=%23fce5ae"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <a href="/"
+        ><div class="logo"><img src="assets/logo.svg" /></div
+      ></a>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#shows" onclick="toggleMenu()">Shows</a></li>
+          <li>
+            <a href="#listen" onclick="toggleMenu()">Listen</a>
+          </li>
+          <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <a href="#mailing-list" onclick="toggleMenu()">Mailing List</a>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <div id="home"><div id="p5-canvas"></div></div>
+
+    <section id="shows">
+      <script
+        charset="utf-8"
+        src="https://widget.bandsintown.com/main.min.js"></script>
+      <a
+        class="bit-widget-initializer"
+        data-artist-name="Chaos Fiction"
+        data-display-local-dates="false"
+        data-display-past-dates="false"
+        data-auto-style="false"
+        data-text-color="#FFFFFF"
+        data-link-color="#7a7aff"
+        data-background-color="rgba(0,0,0,0)"
+        data-display-limit=""
+        data-display-start-time="false"
+        data-link-text-color="#FFFFFF"
+        data-display-lineup="false"
+        data-display-play-my-city="false"
+        data-separator-color="rgba(124,124,124,0.25)"></a>
+    </section>
+    <section id="listen">
+      <iframe
+        style="border: 0; width: 100%"
+        src="https://bandcamp.com/EmbeddedPlayer/track=3209311982/size=large/bgcol=333333/linkcol=9a64ff/tracklist=false/artwork=small/transparent=true/"
+        seamless
+        ><a href="https://chaosfiction.bandcamp.com/track/heartstrings-demo"
+          >Heartstrings (demo) by Chaos Fiction</a
+        ></iframe
+      >
+      <iframe
+        style="aspect-ratio: 16 / 9; width: 100%"
+        width="700"
+        height="400"
+        src="https://www.youtube-nocookie.com/embed/W1RfAGn6Zss"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </section>
+    <section id="gallery">
+      <img src="assets/chaos_fiction_1.jpeg" /><img
+        src="assets/chaos_fiction_2.jpeg" /><img
+        src="assets/chaos_fiction_3.jpeg" /><img
+        src="assets/chaos_fiction_4.jpeg" />
+    </section>
+    <section id="contact">
+      <div>
+        To get in touch with us, email
+        <a href="mailto:chaosfictionmusic@gmail.com"
+          >chaosfictionmusic@gmail.com</a
+        >.
+      </div>
+    </section>
+    <section id="mailing-list">
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/chaosfiction"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/chaosfiction', 'popupwindow')"
+        class="embeddable-buttondown-form">
+        <label for="bd-email">Enter your email</label><br />
+        <input type="email" name="email" id="bd-email" />
+        <input type="submit" value="Subscribe" />
+      </form>
+    </section>
+
+    <script src="javascript/toggleMenu.js"></script>
+    <script src="javascript/sandGrain.js"></script>
+    <script src="javascript/p5Canvas.js"></script>
+    <!-- <script src="javascript/updateReleaseInfo.js"></script> -->
   </body>
 </html>
