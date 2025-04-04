@@ -11,14 +11,16 @@ function preload() {
 
 function setup() {
   // const canvasMargin = 100
-  const canvas = createCanvas(windowWidth, windowHeight)
+  const canvas = createCanvas(windowWidth, windowHeight - windowHeight * 0.1)
   canvas.parent("p5-canvas")
 
   // setReleaseCopy(canvas)
   // updateReleaseCopy(postreleaseHtml)
-  fontSize = width < 600 ? width / 2 : width / 14
+  fontSize = width < 600 ? 50 : width / 14
   sandColor = color(252, 229, 174)
   steadyNervesBoundingBox = alvedon.textBounds("steady nerves", 0, 0, fontSize)
+  steadyNervesX = width / 2 - steadyNervesBoundingBox.w / 2
+  steadyNervesY = height / 2 - steadyNervesBoundingBox.h / 2
   newVibration()
   cursor(HAND)
   textFont(alvedon)
@@ -111,7 +113,8 @@ function draw() {
   }
   push()
   strokeWeight(3)
-  text("steady nerves", width / 2 - steadyNervesBoundingBox.w / 2, height / 2)
+  textSize(fontSize)
+  text("steady nerves", steadyNervesX, steadyNervesY)
   pop()
 }
 
