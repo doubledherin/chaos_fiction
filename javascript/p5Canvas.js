@@ -1,8 +1,14 @@
 let boundingBox, alvedon, m, n, sand, sandColor
 let numberOfSandGrains = 10000
 let fontSize
-let prereleaseHtml = `<div>New album Steady Nerves releasing on April 11, 2025<div>`
-let postreleaseHtml = `<div>New album Steady Nerves now streaming everywhere.</br>Vinyl coming soon!</br>Listen <a href='https://chaosfiction.hearnow.com/steady-nerves'>here</a>.<div>`
+const releaseDateTimestamp = "2025-04-11T07:01:00Z"
+const prereleaseHtml = `<div>New album Steady Nerves releasing on April 11, 2025<div>`
+const postreleaseHtml = `<div>New album Steady Nerves now streaming everywhere.</br>Vinyl coming soon!</br>Listen <a href='https://chaosfiction.hearnow.com/steady-nerves'>here</a>.<div>`
+
+// check every minute to see if the release date has passed
+const isPostRelease = setInterval(() => {
+  checkTime()
+}, 60000)
 
 function preload() {
   alvedon = loadFont("fonts/ALVEDON2.ttf")
@@ -26,6 +32,34 @@ function setup() {
   textFont(alvedon)
   textSize(fontSize)
   loadPixels()
+}
+
+function checkTime() {
+  const releaseDate = new Date(releaseDateTimestamp)
+  console.log(getISODateStringFor10SecondsFromNow())
+  const tenSecondsFromNow = new Date("2025-04-04T02:21:30Z")
+  const now = new Date()
+  if (now >= releaseDate) {
+    clearInterval(isPostRelease) // Stop checking once the update is made
+    return true
+  }
+  return false
+}
+
+// for testing the update to the release info
+function getISODateStringFor10SecondsFromNow() {
+  const now = new Date()
+  const thirtySecondsFromNow = new Date(now.getTime() + 10000) // Add 30 seconds
+
+  // Format the date to "YYYY-MM-DDTHH:mm:ssZ"
+  const year = thirtySecondsFromNow.getUTCFullYear()
+  const month = String(thirtySecondsFromNow.getUTCMonth() + 1).padStart(2, "0") // Months are 0-indexed
+  const day = String(thirtySecondsFromNow.getUTCDate()).padStart(2, "0")
+  const hours = String(thirtySecondsFromNow.getUTCHours()).padStart(2, "0")
+  const minutes = String(thirtySecondsFromNow.getUTCMinutes()).padStart(2, "0")
+  const seconds = String(thirtySecondsFromNow.getUTCSeconds()).padStart(2, "0")
+
+  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`
 }
 
 function newVibration() {
