@@ -11,6 +11,9 @@
     display: flex;
     overflow: visible;
   }
+  #listen {
+    justify-content: space-around;
+  }
 }
 
 /* small */
@@ -26,7 +29,7 @@
   }
 
   .bit-widget .bit-top-track-button {
-    display: inline-block !important;
+    display: inline-block;
     width: 41% !important;
     font-size: 15px !important;
     margin: 0 auto !important;
