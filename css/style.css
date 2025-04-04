@@ -42,6 +42,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 10vh;
+  z-index: 1;
 }
 
 .nav-links {
