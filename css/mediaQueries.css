@@ -21,6 +21,18 @@
     text-align: center;
   }
 
+  section {
+    margin: 0 20px;
+  }
+
+  .bit-widget .bit-top-track-button {
+    display: inline-block !important;
+    width: 41% !important;
+    font-size: 15px !important;
+    margin: 0 auto !important;
+    padding: 40px 10px !important;
+  }
+
   .logo img {
     width: 245px;
   }
