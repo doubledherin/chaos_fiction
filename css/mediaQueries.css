@@ -1,5 +1,8 @@
 /* large */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1560px) {
+  #contact {
+    font-size: x-large;
+  }
 }
 
 /* medium */
@@ -12,7 +15,17 @@
     overflow: visible;
   }
   #listen {
-    justify-content: space-around;
+    justify-content: center;
+  }
+  #contact {
+    font-size: large;
+    margin: 0 5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #contact {
+    font-size: medium;
   }
 }
 
@@ -38,5 +51,9 @@
 
   .logo img {
     width: 245px;
+  }
+
+  #contact {
+    font-size: medium;
   }
 }
