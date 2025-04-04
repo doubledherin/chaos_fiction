@@ -1,6 +1,6 @@
 let boundingBox, alvedon, m, n, sand, sandColor
 let numberOfSandGrains = 10000
-let fontSize = 100
+let fontSize
 let prereleaseHtml = `<div>New album Steady Nerves releasing on April 11, 2025<div>`
 let postreleaseHtml = `<div>New album Steady Nerves now streaming everywhere.</br>Vinyl coming soon!</br>Listen <a href='https://chaosfiction.hearnow.com/steady-nerves'>here</a>.<div>`
 
@@ -16,7 +16,7 @@ function setup() {
 
   // setReleaseCopy(canvas)
   // updateReleaseCopy(postreleaseHtml)
-
+  fontSize = width < 600 ? width / 2 : width / 14
   sandColor = color(252, 229, 174)
   steadyNervesBoundingBox = alvedon.textBounds("steady nerves", 0, 0, fontSize)
   newVibration()

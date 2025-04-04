@@ -86,7 +86,6 @@ a:hover {
 
 #hamburger-nav {
   display: none;
-  margin: 0 4rem;
 }
 
 .hamburger-menu {
@@ -137,6 +136,9 @@ a:hover {
 
 .menu-links.open {
   max-height: 300px;
+  overflow: visible;
+  top: 180%;
+  transform: translateX(-50%); /* Offset by 50% of its width to center */
 }
 
 .hamburger-icon.open span:first-child {
