@@ -1,34 +1,3 @@
-/* large */
-@media screen and (max-width: 1560px) {
-  #contact {
-    font-size: x-large;
-  }
-}
-
-/* medium */
-@media screen and (max-width: 1280px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: flex;
-    overflow: visible;
-  }
-  #listen {
-    justify-content: center;
-  }
-  #contact {
-    font-size: large;
-    margin: 0 5rem;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  #contact {
-    font-size: medium;
-  }
-}
-
 /* small */
 @media screen and (max-width: 600px) {
   .nav-links {
@@ -55,5 +24,46 @@
 
   #contact {
     font-size: medium;
+  }
+}
+
+/* medium */
+@media screen and (max-width: 800px) {
+  #contact {
+    font-size: medium;
+  }
+}
+
+/* bigger */
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+    overflow: visible;
+  }
+  .nav-links {
+    gap: 1.5rem;
+    font-size: 1rem;
+  }
+  #listen {
+    justify-content: center;
+  }
+  #contact {
+    font-size: large;
+    margin: 0 5rem;
+  }
+}
+
+/* large */
+@media screen and (max-width: 1560px) {
+  .nav-links {
+    gap: 1.5rem;
+    font-size: 1rem;
+  }
+
+  #contact {
+    font-size: x-large;
   }
 }
