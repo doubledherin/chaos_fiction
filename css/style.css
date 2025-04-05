@@ -245,3 +245,11 @@ section {
   border: 0.5px rgb(252, 229, 174) solid;
   border-radius: 15px;
 }
+
+.copyright {
+  text-align: right;
+  font-size: 10px;
+  padding: 12px;
+  padding-right: 0;
+  color: white;
+}
