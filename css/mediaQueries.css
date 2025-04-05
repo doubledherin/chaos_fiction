@@ -1,36 +1,12 @@
-/* small */
-@media screen and (max-width: 600px) {
+/* large */
+@media screen and (max-width: 1560px) {
   .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-
-  section {
-    margin: 0 20px;
-  }
-
-  .bit-widget .bit-top-track-button {
-    display: inline-block;
-    width: 41% !important;
-    font-size: 15px !important;
-    margin: 0 auto !important;
-    padding: 40px 10px !important;
-  }
-
-  .logo img {
-    width: 245px;
+    gap: 1.5rem;
+    font-size: 1rem;
   }
 
   #contact {
-    font-size: medium;
-  }
-}
-
-/* medium */
-@media screen and (max-width: 800px) {
-  #contact {
-    font-size: medium;
+    font-size: x-large;
   }
 }
 
@@ -56,14 +32,38 @@
   }
 }
 
-/* large */
-@media screen and (max-width: 1560px) {
+/* medium */
+@media screen and (max-width: 800px) {
+  #contact {
+    font-size: medium;
+  }
+}
+
+/* small */
+@media screen and (max-width: 600px) {
   .nav-links {
-    gap: 1.5rem;
-    font-size: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  section {
+    margin: 0 20px;
+  }
+
+  .bit-widget .bit-top-track-button {
+    display: inline-block;
+    width: 41% !important;
+    font-size: 15px !important;
+    margin: 0 auto !important;
+    padding: 40px 10px !important;
+  }
+
+  .logo img {
+    width: 245px;
   }
 
   #contact {
-    font-size: x-large;
+    font-size: small;
   }
 }
