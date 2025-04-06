@@ -14,7 +14,8 @@ html {
 
 html,
 body {
-  overflow-x: hidden;
+  /* commenting out overflow-x hidden makes sticky nav work, on desktop only though, and commenting it out makes the canvas too wide */
+  /* overflow-x: hidden; */
   margin: 0;
   padding: 0;
   background-color: black;
@@ -24,6 +25,7 @@ body {
 }
 canvas {
   display: block;
+  overflow-x: hidden;
 }
 
 /* navigation */
@@ -89,6 +91,7 @@ a:hover {
 
 #hamburger-nav {
   display: none;
+  overflow-x: hidden;
 }
 
 .hamburger-menu {
@@ -141,7 +144,6 @@ a:hover {
   max-height: max-content;
   overflow: visible;
   top: 180%;
-  /* transform: translateX(-50%); Offset by 50% of its width to center */
 }
 
 .hamburger-icon.open span:first-child {
@@ -175,6 +177,7 @@ section {
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
+  overflow-x: hidden;
 }
 
 #shows {
