@@ -1,14 +1,16 @@
-function updateReleaseCopy(postreleaseHtml) {
-  const releaseInfo = document.getElementById("release-info")
+function getReleaseCopy() {
+  const prereleaseHtml = `<div>New album Steady Nerves releasing on April 11, 2025<div>`
+  const postreleaseHtml = `<div>New album Steady Nerves now streaming everywhere.</br>Vinyl coming soon!</br>Listen <a href='https://chaosfiction.hearnow.com/steady-nerves'>here</a>.<div>`
+  return isPostRelease() ? postreleaseHtml : prereleaseHtml
+}
 
-  const releaseDate = new Date("2025-04-11T07:01:00Z") // 12:01 AM Pacific Time (UTC-7)
-  console.log(getISODateStringFor10SecondsFromNow())
-  const tenSecondsFromNow = "2025-04-03T20:34:50Z"
+function isPostRelease() {
+  const releaseDateTimestamp = "2025-04-11T07:01:00Z"
+  const releaseDate = new Date(releaseDateTimestamp)
+  // console.log(getISODateStringFor10SecondsFromNow())
+  // const tenSecondsFromNow = new Date("2025-04-06T21:03:10Z")
   const now = new Date()
-  if (now >= releaseDate) {
-    clearInterval(checkTimeInterval) // Stop checking once the update is made
-    releaseInfo.innerHTML = postreleaseHtml
-  }
+  return now >= releaseDate
 }
 
 // for testing the update to the release info
@@ -26,3 +28,13 @@ function getISODateStringFor10SecondsFromNow() {
 
   return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const releaseInfoDiv = document.querySelector(".release-info")
+
+  if (typeof getReleaseCopy === "function") {
+    releaseInfoDiv.innerHTML = getReleaseCopy()
+  } else {
+    console.error("getReleaseCopy is not defined")
+  }
+})

@@ -242,12 +242,10 @@ section {
 .release-info {
   text-align: center;
   color: white;
-  margin: 40px;
+  margin: 10px 0;
   font-size: large;
-  line-height: 2rem;
+  line-height: 1.6rem;
   background-color: black;
-  border: 0.5px rgb(252, 229, 174) solid;
-  border-radius: 15px;
 }
 
 .copyright {

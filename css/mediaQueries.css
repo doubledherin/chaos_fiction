@@ -47,6 +47,10 @@
     text-align: center;
   }
 
+  .release-info {
+    font-size: medium;
+    line-height: 1.4rem;
+  }
   section {
     margin: 0 20px;
   }
